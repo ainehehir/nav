@@ -1,0 +1,125 @@
+/* set variables */
+:root {
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-bg: hsl(210, 36%, 96%);
+  --clr-primary: hsl(205, 78%, 60%);
+  --clr-secondary: hsl(210, 31%, 80%);
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1em;
+}
+
+/* global styles */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* nav */
+.nav {
+  background-color: var(--clr-bg);
+  box-shadow: var(--clr-black);
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-toggle {
+  font-size: 1.5em;
+  color: var(--clr-primary);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  color: var(--clr-secondary);
+  transform: rotate(90deg);
+}
+
+#nav-logo {
+  padding-top: 0.75em;
+  height: 40px;
+}
+
+.nav-links a {
+  color: var(--clr-black);
+  font-size: 1em;
+  text-transform: capitalize;
+  letter-spacing: 0.25em;
+  display: block;
+  transition: var(--transition);
+  padding: 0.5em 1em;
+}
+
+.nav-links a:hover {
+  color: var(--clr-primary);
+}
+
+.nav-social-icons {
+  display: none;
+}
+
+.nav-links {
+  height: 0;
+  overflow: hidden;
+}
+.show-links {
+  height: 10rem;
+}
+
+@media screen and (min-width: 800px) {
+  .nav {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .nav-links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .nav-social-icons {
+    display: flex;
+  }
+  .nav-social-icons a {
+    margin: 0 0.5rem;
+    color: var(--clr-primary);
+    transition: var(--transition);
+  }
+  .nav-social-icons a:hover {
+    color: var(--clr-secondary);
+  }
+}
